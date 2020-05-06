@@ -45,5 +45,54 @@ int dz[] = { 0,  0, 0,  0,  1, -1};
 
 int main(){
 
+  IOS;
+  int tn;
+  cin>>tn;
+  while(tn--)
+  {
+    int n, k;
+    string s;
+    cin>>n>>k>>s;
+    string ss[k];
+
+    FOR(i, 0, k) ss[i] = "";
+    int Cnt[26];
+    memset(Cnt, 0, sizeof(Cnt));
+
+    FOR(i, 0, n) Cnt[s[i]-'a']++;
+
+    int kk = 0;
+    bool ok = false;
+
+    FOR(i, 0, k)
+    {
+      FOR(j, 0, 26)
+      {
+        if(!Cnt[j]) continue;
+        ss[i] += (j+'a');
+        Cnt[j]--;
+        break;
+      }
+    }
+
+    FOR(i, 0, 26)
+    {
+      if(!Cnt[i]) continue;
+      if((Cnt[i]-1)%k) ok = true;
+
+      if(ok)
+      {
+
+      }
+      else
+      {
+        FOR(j, 0, Cnt[i]/k) ans += (i+'a');
+      }
+
+    }
+
+    cout<<ans<<nl;
+  }
+
   return 0;
 }

@@ -1,0 +1,6 @@
+ ab
+ abc
+ aabbc
+ aaaaa
+ aaxxzz
+ ehinopx
